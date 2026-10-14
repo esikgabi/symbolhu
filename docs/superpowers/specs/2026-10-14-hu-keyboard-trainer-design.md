@@ -42,7 +42,7 @@ A `keydown` listener compares `event.key` with the target character. Modifier-on
 Maps character to `{ keyCode, shift, option }`. Generated once by a script that runs `UCKeyTranslate` for every keycode and modifier combination on the Hungarian layout, then committed. Drives the hints and the default pool.
 
 ### Hint (`src/components/KeyboardHint.vue`)
-Inline SVG of a MacBook ISO keyboard. Highlights the physical key plus Shift/Option. After a miss, the hint stays visible until the correct key is pressed, then the next ask starts.
+HTML/CSS (flex rows) MacBook ISO keyboard. Highlights the physical key plus Shift/Option. After a miss, the hint stays visible until the correct key is pressed, then the next ask starts.
 
 ### Screens
 - **Practice:** large target character, countdown bar, round and hit counters, hint on a miss.
@@ -59,7 +59,7 @@ games:    [ { date, chars: string[], rounds: [ { asked: string[], mastered: stri
 
 ## Error handling
 
-- If the pressed key never produces any pool character across several asks, show a notice: "Is the Hungarian input source active?"
+- If the physical Y or Z key types `y`/`z` (the Hungarian layout swaps them), show a notice: "Is the Hungarian input source active?"
 - Settings are validated (timeout > 0, counts >= 1, pool non-empty, each pool entry is a single character present in the layout map).
 - A corrupt or missing store file falls back to defaults.
 
