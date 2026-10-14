@@ -1,0 +1,902 @@
+{
+  "!" : {
+    "keyCode" : 21,
+    "option" : false,
+    "shift" : true
+  },
+  "\"" : {
+    "keyCode" : 19,
+    "option" : false,
+    "shift" : true
+  },
+  "#" : {
+    "keyCode" : 20,
+    "option" : true,
+    "shift" : true
+  },
+  "$" : {
+    "keyCode" : 21,
+    "option" : true,
+    "shift" : false
+  },
+  "%" : {
+    "keyCode" : 23,
+    "option" : false,
+    "shift" : true
+  },
+  "&" : {
+    "keyCode" : 18,
+    "option" : true,
+    "shift" : false
+  },
+  "'" : {
+    "keyCode" : 18,
+    "option" : false,
+    "shift" : true
+  },
+  "(" : {
+    "keyCode" : 28,
+    "option" : false,
+    "shift" : true
+  },
+  ")" : {
+    "keyCode" : 25,
+    "option" : false,
+    "shift" : true
+  },
+  "*" : {
+    "keyCode" : 43,
+    "option" : true,
+    "shift" : true
+  },
+  "+" : {
+    "keyCode" : 20,
+    "option" : false,
+    "shift" : true
+  },
+  "," : {
+    "keyCode" : 43,
+    "option" : false,
+    "shift" : false
+  },
+  "-" : {
+    "keyCode" : 44,
+    "option" : false,
+    "shift" : false
+  },
+  "." : {
+    "keyCode" : 47,
+    "option" : false,
+    "shift" : false
+  },
+  "\/" : {
+    "keyCode" : 22,
+    "option" : false,
+    "shift" : true
+  },
+  "0" : {
+    "keyCode" : 10,
+    "option" : false,
+    "shift" : false
+  },
+  "1" : {
+    "keyCode" : 18,
+    "option" : false,
+    "shift" : false
+  },
+  "2" : {
+    "keyCode" : 19,
+    "option" : false,
+    "shift" : false
+  },
+  "3" : {
+    "keyCode" : 20,
+    "option" : false,
+    "shift" : false
+  },
+  "4" : {
+    "keyCode" : 21,
+    "option" : false,
+    "shift" : false
+  },
+  "5" : {
+    "keyCode" : 23,
+    "option" : false,
+    "shift" : false
+  },
+  "6" : {
+    "keyCode" : 22,
+    "option" : false,
+    "shift" : false
+  },
+  "7" : {
+    "keyCode" : 26,
+    "option" : false,
+    "shift" : false
+  },
+  "8" : {
+    "keyCode" : 28,
+    "option" : false,
+    "shift" : false
+  },
+  "9" : {
+    "keyCode" : 25,
+    "option" : false,
+    "shift" : false
+  },
+  ":" : {
+    "keyCode" : 47,
+    "option" : false,
+    "shift" : true
+  },
+  ";" : {
+    "keyCode" : 47,
+    "option" : true,
+    "shift" : false
+  },
+  "<" : {
+    "keyCode" : 6,
+    "option" : true,
+    "shift" : true
+  },
+  "=" : {
+    "keyCode" : 26,
+    "option" : false,
+    "shift" : true
+  },
+  ">" : {
+    "keyCode" : 7,
+    "option" : true,
+    "shift" : true
+  },
+  "?" : {
+    "keyCode" : 43,
+    "option" : false,
+    "shift" : true
+  },
+  "@" : {
+    "keyCode" : 12,
+    "option" : true,
+    "shift" : false
+  },
+  "A" : {
+    "keyCode" : 0,
+    "option" : false,
+    "shift" : true
+  },
+  "B" : {
+    "keyCode" : 11,
+    "option" : false,
+    "shift" : true
+  },
+  "C" : {
+    "keyCode" : 8,
+    "option" : false,
+    "shift" : true
+  },
+  "D" : {
+    "keyCode" : 2,
+    "option" : false,
+    "shift" : true
+  },
+  "E" : {
+    "keyCode" : 14,
+    "option" : false,
+    "shift" : true
+  },
+  "F" : {
+    "keyCode" : 3,
+    "option" : false,
+    "shift" : true
+  },
+  "G" : {
+    "keyCode" : 5,
+    "option" : false,
+    "shift" : true
+  },
+  "H" : {
+    "keyCode" : 4,
+    "option" : false,
+    "shift" : true
+  },
+  "I" : {
+    "keyCode" : 34,
+    "option" : false,
+    "shift" : true
+  },
+  "J" : {
+    "keyCode" : 38,
+    "option" : false,
+    "shift" : true
+  },
+  "K" : {
+    "keyCode" : 40,
+    "option" : false,
+    "shift" : true
+  },
+  "L" : {
+    "keyCode" : 37,
+    "option" : false,
+    "shift" : true
+  },
+  "M" : {
+    "keyCode" : 46,
+    "option" : false,
+    "shift" : true
+  },
+  "N" : {
+    "keyCode" : 45,
+    "option" : false,
+    "shift" : true
+  },
+  "O" : {
+    "keyCode" : 31,
+    "option" : false,
+    "shift" : true
+  },
+  "P" : {
+    "keyCode" : 35,
+    "option" : false,
+    "shift" : true
+  },
+  "Q" : {
+    "keyCode" : 12,
+    "option" : false,
+    "shift" : true
+  },
+  "R" : {
+    "keyCode" : 15,
+    "option" : false,
+    "shift" : true
+  },
+  "S" : {
+    "keyCode" : 1,
+    "option" : false,
+    "shift" : true
+  },
+  "T" : {
+    "keyCode" : 17,
+    "option" : false,
+    "shift" : true
+  },
+  "U" : {
+    "keyCode" : 32,
+    "option" : false,
+    "shift" : true
+  },
+  "V" : {
+    "keyCode" : 9,
+    "option" : false,
+    "shift" : true
+  },
+  "W" : {
+    "keyCode" : 13,
+    "option" : false,
+    "shift" : true
+  },
+  "X" : {
+    "keyCode" : 7,
+    "option" : false,
+    "shift" : true
+  },
+  "Y" : {
+    "keyCode" : 6,
+    "option" : false,
+    "shift" : true
+  },
+  "Z" : {
+    "keyCode" : 16,
+    "option" : false,
+    "shift" : true
+  },
+  "[" : {
+    "keyCode" : 28,
+    "option" : true,
+    "shift" : false
+  },
+  "\\" : {
+    "keyCode" : 27,
+    "option" : true,
+    "shift" : false
+  },
+  "]" : {
+    "keyCode" : 25,
+    "option" : true,
+    "shift" : false
+  },
+  "^" : {
+    "keyCode" : 39,
+    "option" : true,
+    "shift" : false
+  },
+  "_" : {
+    "keyCode" : 44,
+    "option" : false,
+    "shift" : true
+  },
+  "`" : {
+    "keyCode" : 42,
+    "option" : true,
+    "shift" : false
+  },
+  "a" : {
+    "keyCode" : 0,
+    "option" : false,
+    "shift" : false
+  },
+  "b" : {
+    "keyCode" : 11,
+    "option" : false,
+    "shift" : false
+  },
+  "c" : {
+    "keyCode" : 8,
+    "option" : false,
+    "shift" : false
+  },
+  "d" : {
+    "keyCode" : 2,
+    "option" : false,
+    "shift" : false
+  },
+  "e" : {
+    "keyCode" : 14,
+    "option" : false,
+    "shift" : false
+  },
+  "f" : {
+    "keyCode" : 3,
+    "option" : false,
+    "shift" : false
+  },
+  "g" : {
+    "keyCode" : 5,
+    "option" : false,
+    "shift" : false
+  },
+  "h" : {
+    "keyCode" : 4,
+    "option" : false,
+    "shift" : false
+  },
+  "i" : {
+    "keyCode" : 34,
+    "option" : false,
+    "shift" : false
+  },
+  "j" : {
+    "keyCode" : 38,
+    "option" : false,
+    "shift" : false
+  },
+  "k" : {
+    "keyCode" : 40,
+    "option" : false,
+    "shift" : false
+  },
+  "l" : {
+    "keyCode" : 37,
+    "option" : false,
+    "shift" : false
+  },
+  "m" : {
+    "keyCode" : 46,
+    "option" : false,
+    "shift" : false
+  },
+  "n" : {
+    "keyCode" : 45,
+    "option" : false,
+    "shift" : false
+  },
+  "o" : {
+    "keyCode" : 31,
+    "option" : false,
+    "shift" : false
+  },
+  "p" : {
+    "keyCode" : 35,
+    "option" : false,
+    "shift" : false
+  },
+  "q" : {
+    "keyCode" : 12,
+    "option" : false,
+    "shift" : false
+  },
+  "r" : {
+    "keyCode" : 15,
+    "option" : false,
+    "shift" : false
+  },
+  "s" : {
+    "keyCode" : 1,
+    "option" : false,
+    "shift" : false
+  },
+  "t" : {
+    "keyCode" : 17,
+    "option" : false,
+    "shift" : false
+  },
+  "u" : {
+    "keyCode" : 32,
+    "option" : false,
+    "shift" : false
+  },
+  "v" : {
+    "keyCode" : 9,
+    "option" : false,
+    "shift" : false
+  },
+  "w" : {
+    "keyCode" : 13,
+    "option" : false,
+    "shift" : false
+  },
+  "x" : {
+    "keyCode" : 7,
+    "option" : false,
+    "shift" : false
+  },
+  "y" : {
+    "keyCode" : 6,
+    "option" : false,
+    "shift" : false
+  },
+  "z" : {
+    "keyCode" : 16,
+    "option" : false,
+    "shift" : false
+  },
+  "{" : {
+    "keyCode" : 26,
+    "option" : true,
+    "shift" : false
+  },
+  "|" : {
+    "keyCode" : 50,
+    "option" : true,
+    "shift" : false
+  },
+  "}" : {
+    "keyCode" : 29,
+    "option" : true,
+    "shift" : false
+  },
+  "~" : {
+    "keyCode" : 30,
+    "option" : true,
+    "shift" : false
+  },
+  "£" : {
+    "keyCode" : 20,
+    "option" : true,
+    "shift" : false
+  },
+  "§" : {
+    "keyCode" : 10,
+    "option" : false,
+    "shift" : true
+  },
+  "¨" : {
+    "keyCode" : 33,
+    "option" : true,
+    "shift" : false
+  },
+  "©" : {
+    "keyCode" : 5,
+    "option" : true,
+    "shift" : false
+  },
+  "«" : {
+    "keyCode" : 6,
+    "option" : true,
+    "shift" : false
+  },
+  "¬" : {
+    "keyCode" : 10,
+    "option" : true,
+    "shift" : false
+  },
+  "®" : {
+    "keyCode" : 15,
+    "option" : true,
+    "shift" : true
+  },
+  "°" : {
+    "keyCode" : 29,
+    "option" : true,
+    "shift" : true
+  },
+  "¶" : {
+    "keyCode" : 15,
+    "option" : true,
+    "shift" : false
+  },
+  "»" : {
+    "keyCode" : 7,
+    "option" : true,
+    "shift" : false
+  },
+  "Á" : {
+    "keyCode" : 39,
+    "option" : false,
+    "shift" : true
+  },
+  "É" : {
+    "keyCode" : 41,
+    "option" : false,
+    "shift" : true
+  },
+  "Í" : {
+    "keyCode" : 50,
+    "option" : false,
+    "shift" : true
+  },
+  "Ó" : {
+    "keyCode" : 24,
+    "option" : false,
+    "shift" : true
+  },
+  "Ô" : {
+    "keyCode" : 38,
+    "option" : true,
+    "shift" : true
+  },
+  "Õ" : {
+    "keyCode" : 4,
+    "option" : true,
+    "shift" : true
+  },
+  "Ö" : {
+    "keyCode" : 29,
+    "option" : false,
+    "shift" : true
+  },
+  "Ú" : {
+    "keyCode" : 30,
+    "option" : false,
+    "shift" : true
+  },
+  "Ü" : {
+    "keyCode" : 27,
+    "option" : false,
+    "shift" : true
+  },
+  "Ý" : {
+    "keyCode" : 33,
+    "option" : true,
+    "shift" : true
+  },
+  "ß" : {
+    "keyCode" : 1,
+    "option" : true,
+    "shift" : false
+  },
+  "á" : {
+    "keyCode" : 39,
+    "option" : false,
+    "shift" : false
+  },
+  "é" : {
+    "keyCode" : 41,
+    "option" : false,
+    "shift" : false
+  },
+  "í" : {
+    "keyCode" : 50,
+    "option" : false,
+    "shift" : false
+  },
+  "ó" : {
+    "keyCode" : 24,
+    "option" : false,
+    "shift" : false
+  },
+  "ö" : {
+    "keyCode" : 29,
+    "option" : false,
+    "shift" : false
+  },
+  "÷" : {
+    "keyCode" : 47,
+    "option" : true,
+    "shift" : true
+  },
+  "ú" : {
+    "keyCode" : 30,
+    "option" : false,
+    "shift" : false
+  },
+  "ü" : {
+    "keyCode" : 27,
+    "option" : false,
+    "shift" : false
+  },
+  "ý" : {
+    "keyCode" : 30,
+    "option" : true,
+    "shift" : true
+  },
+  "Ą" : {
+    "keyCode" : 0,
+    "option" : true,
+    "shift" : true
+  },
+  "ą" : {
+    "keyCode" : 0,
+    "option" : true,
+    "shift" : false
+  },
+  "ć" : {
+    "keyCode" : 8,
+    "option" : true,
+    "shift" : false
+  },
+  "ę" : {
+    "keyCode" : 13,
+    "option" : true,
+    "shift" : false
+  },
+  "Ģ" : {
+    "keyCode" : 42,
+    "option" : true,
+    "shift" : true
+  },
+  "Ī" : {
+    "keyCode" : 24,
+    "option" : true,
+    "shift" : true
+  },
+  "ī" : {
+    "keyCode" : 27,
+    "option" : true,
+    "shift" : true
+  },
+  "Į" : {
+    "keyCode" : 31,
+    "option" : true,
+    "shift" : true
+  },
+  "Ķ" : {
+    "keyCode" : 46,
+    "option" : true,
+    "shift" : false
+  },
+  "ķ" : {
+    "keyCode" : 4,
+    "option" : true,
+    "shift" : false
+  },
+  "Ļ" : {
+    "keyCode" : 35,
+    "option" : true,
+    "shift" : false
+  },
+  "ļ" : {
+    "keyCode" : 12,
+    "option" : true,
+    "shift" : true
+  },
+  "Ł" : {
+    "keyCode" : 13,
+    "option" : true,
+    "shift" : true
+  },
+  "ł" : {
+    "keyCode" : 35,
+    "option" : true,
+    "shift" : true
+  },
+  "ń" : {
+    "keyCode" : 3,
+    "option" : true,
+    "shift" : false
+  },
+  "Ņ" : {
+    "keyCode" : 31,
+    "option" : true,
+    "shift" : false
+  },
+  "ō" : {
+    "keyCode" : 41,
+    "option" : true,
+    "shift" : true
+  },
+  "Ő" : {
+    "keyCode" : 33,
+    "option" : false,
+    "shift" : true
+  },
+  "ő" : {
+    "keyCode" : 33,
+    "option" : false,
+    "shift" : false
+  },
+  "Ŕ" : {
+    "keyCode" : 50,
+    "option" : true,
+    "shift" : true
+  },
+  "ŕ" : {
+    "keyCode" : 18,
+    "option" : true,
+    "shift" : true
+  },
+  "Ŗ" : {
+    "keyCode" : 22,
+    "option" : true,
+    "shift" : true
+  },
+  "ŗ" : {
+    "keyCode" : 26,
+    "option" : true,
+    "shift" : true
+  },
+  "Ř" : {
+    "keyCode" : 19,
+    "option" : true,
+    "shift" : true
+  },
+  "ř" : {
+    "keyCode" : 23,
+    "option" : true,
+    "shift" : true
+  },
+  "ś" : {
+    "keyCode" : 17,
+    "option" : true,
+    "shift" : true
+  },
+  "š" : {
+    "keyCode" : 14,
+    "option" : true,
+    "shift" : true
+  },
+  "ť" : {
+    "keyCode" : 34,
+    "option" : true,
+    "shift" : true
+  },
+  "Ū" : {
+    "keyCode" : 5,
+    "option" : true,
+    "shift" : true
+  },
+  "Ů" : {
+    "keyCode" : 37,
+    "option" : true,
+    "shift" : true
+  },
+  "Ű" : {
+    "keyCode" : 42,
+    "option" : false,
+    "shift" : true
+  },
+  "ű" : {
+    "keyCode" : 42,
+    "option" : false,
+    "shift" : false
+  },
+  "Ų" : {
+    "keyCode" : 45,
+    "option" : true,
+    "shift" : true
+  },
+  "ų" : {
+    "keyCode" : 46,
+    "option" : true,
+    "shift" : true
+  },
+  "Ź" : {
+    "keyCode" : 16,
+    "option" : true,
+    "shift" : true
+  },
+  "ź" : {
+    "keyCode" : 16,
+    "option" : true,
+    "shift" : false
+  },
+  "Ż" : {
+    "keyCode" : 40,
+    "option" : true,
+    "shift" : false
+  },
+  "ż" : {
+    "keyCode" : 1,
+    "option" : true,
+    "shift" : true
+  },
+  "Ž" : {
+    "keyCode" : 2,
+    "option" : true,
+    "shift" : true
+  },
+  "ž" : {
+    "keyCode" : 3,
+    "option" : true,
+    "shift" : true
+  },
+  "–" : {
+    "keyCode" : 44,
+    "option" : true,
+    "shift" : false
+  },
+  "—" : {
+    "keyCode" : 44,
+    "option" : true,
+    "shift" : true
+  },
+  "’" : {
+    "keyCode" : 11,
+    "option" : true,
+    "shift" : true
+  },
+  "‚" : {
+    "keyCode" : 9,
+    "option" : true,
+    "shift" : true
+  },
+  "”" : {
+    "keyCode" : 11,
+    "option" : true,
+    "shift" : false
+  },
+  "„" : {
+    "keyCode" : 9,
+    "option" : true,
+    "shift" : false
+  },
+  "†" : {
+    "keyCode" : 17,
+    "option" : true,
+    "shift" : false
+  },
+  "•" : {
+    "keyCode" : 37,
+    "option" : true,
+    "shift" : false
+  },
+  "…" : {
+    "keyCode" : 41,
+    "option" : true,
+    "shift" : false
+  },
+  "‹" : {
+    "keyCode" : 23,
+    "option" : true,
+    "shift" : false
+  },
+  "›" : {
+    "keyCode" : 22,
+    "option" : true,
+    "shift" : false
+  },
+  "€" : {
+    "keyCode" : 14,
+    "option" : true,
+    "shift" : false
+  },
+  "™" : {
+    "keyCode" : 19,
+    "option" : true,
+    "shift" : false
+  },
+  "∂" : {
+    "keyCode" : 2,
+    "option" : true,
+    "shift" : false
+  },
+  "∆" : {
+    "keyCode" : 38,
+    "option" : true,
+    "shift" : false
+  },
+  "≠" : {
+    "keyCode" : 24,
+    "option" : true,
+    "shift" : false
+  }
+}
