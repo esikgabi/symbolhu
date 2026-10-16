@@ -6,7 +6,14 @@ A small desktop trainer built with **Tauri 2** and **Vue 3** for the symbols tha
 
 ## Installation
 
-There are no prebuilt releases yet. Build the app from source (see [Building](#building)); it targets macOS on Apple Silicon.
+Download the latest `.dmg` from the [releases page](https://github.com/esikgabi/symbolhu/releases) (macOS, Apple Silicon only), open it and drag **symbolhu** to Applications. You can also build it from source (see [Building](#building)).
+
+The app is not notarized by Apple (no paid developer account), so macOS blocks the first launch:
+
+-   Try to open the app once, then go to **System Settings → Privacy & Security**, scroll down and click **Open Anyway**; or
+-   run `xattr -dr com.apple.quarantine /Applications/symbolhu.app` in Terminal.
+
+Only needed once. Releases are built by GitHub Actions from the tagged source, so the file you download matches the code in this repo.
 
 ## Features
 
@@ -86,6 +93,18 @@ Output lands in `src-tauri/target/release/bundle/`.
 
 > **Note:** `cargo check` needs the frontend output dir to exist: run `mkdir -p dist` first (`dist` is gitignored).
 
+### Releasing
+
+Versions follow [SemVer](https://semver.org/). `package.json`, `src-tauri/tauri.conf.json` and `src-tauri/Cargo.toml` must carry the same version.
+
+```bash
+# 1. bump the version in the three files above, run tests, merge to main
+# 2. tag and push
+git tag v0.2.0 && git push origin v0.2.0
+```
+
+The [Release workflow](.github/workflows/release.yml) builds the Apple Silicon `.dmg` and attaches it to a **draft** GitHub release. Edit the notes, then click **Publish**. Use `0.x.y-rc.1` style tags/versions with the "pre-release" checkbox for test builds. The workflow can also be started manually from the Actions tab as a dry run.
+
 ### Regenerating the layout map
 
 Needs the Hungarian input source enabled. Don't hand-edit the JSON; rerun the script:
@@ -104,6 +123,7 @@ swiftc -O scripts/gen-layout.swift -o /tmp/gen-layout && /tmp/gen-layout > src/d
     -   `layout.ts`, `store.ts`: layout lookup and persistence.
 -   `src-tauri/`: Rust shell, capabilities and Tauri config.
 -   `scripts/`: layout generator (`gen-layout.swift`).
+-   `.github/workflows/`: release pipeline.
 -   `docs/superpowers/`: design spec and implementation plan.
 -   `screenshots/`: images used in this README.
 

@@ -13,6 +13,10 @@ symbolhu: Tauri 2 + Vue 3 macOS desktop app that drills Hungarian-layout symbols
 
 Run `bun run test` and `bun run build` before committing.
 
+## Releases
+
+Tag `vX.Y.Z` (matching `package.json`, `tauri.conf.json`, `Cargo.toml`) triggers `.github/workflows/release.yml`: arm64 `.dmg`, ad-hoc signed (`signingIdentity: "-"`), draft GitHub release. Not notarized; README documents the Gatekeeper workaround. Don't tag or publish without asking.
+
 ## Layout
 
 - `src/engine/`: pure game logic, no Vue/Tauri imports. `rules.ts` (queue building, weakness), `session.ts` (`GameSession`), `settings.ts` (defaults and clamping). Each has a `.test.ts`.
