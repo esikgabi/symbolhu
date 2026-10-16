@@ -20,6 +20,8 @@ Only needed once. Releases are built by GitHub Actions from the tagged source, s
 -   **Weakness-driven games**: each game picks the 5 characters you miss most (miss rate over your last 30 asks); with no history it starts with `< > * ( )`.
 -   **Rounds**: every active character is asked 3 times per round, shuffled, never the same one twice in a row. A character with all hits in a round is mastered and dropped; the game ends when none remain or after 10 rounds.
 -   **Instant hints**: a wrong key or a 3 s timeout is a miss and shows the key combo on an on-screen keyboard. The hint stays until you press the right key (`Esc` skips it).
+-   **Keycap display**: each symbol is drawn on a virtual key at its true height, so `'` `,` `-` `_` `.` are easy to tell apart.
+-   **Round summary**: when a game ends, a table shows each round's asked characters (green = mastered, red = missed) and the overall result.
 -   **Statistics**: per-character asks, hits, recent miss rate and times mastered, plus a game history.
 -   **Configurable**: character pool, characters per game, timeout, hits per character and max rounds (all clamped to sane limits).
 -   **Wrong input source detection**: warns when the Y/Z swap shows the Hungarian layout is not active.
@@ -32,6 +34,12 @@ Only needed once. Releases are built by GitHub Actions from the tagged source, s
 
 ### Asking a symbol
 ![Practice](screenshots/practice.png)
+
+### Game finished
+![Game finished](screenshots/finished.png)
+
+### Statistics
+![Statistics](screenshots/statistics.png)
 
 ### Settings
 ![Settings](screenshots/settings.png)
