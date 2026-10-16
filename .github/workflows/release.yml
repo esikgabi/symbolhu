@@ -1,0 +1,47 @@
+name: Release
+
+# Release = push a tag `vX.Y.Z` (must match the version in tauri.conf.json).
+# Builds the Apple Silicon .dmg and attaches it to a DRAFT GitHub release;
+# review the notes and click "Publish" to make it public.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch: # dry run from the Actions tab: builds, creates a draft for the current version
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-latest # Apple Silicon
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tag matches versions
+        run: |
+          v=$(jq -r .version src-tauri/tauri.conf.json)
+          [ "$v" = "$(jq -r .version package.json)" ] || { echo "package.json version differs"; exit 1; }
+          [ "$v" = "$(sed -n 's/^version = "\(.*\)"/\1/p' src-tauri/Cargo.toml | head -1)" ] || { echo "Cargo.toml version differs"; exit 1; }
+          if [ "$GITHUB_REF_TYPE" = tag ] && [ "$GITHUB_REF_NAME" != "v$v" ]; then echo "tag $GITHUB_REF_NAME != v$v"; exit 1; fi
+
+      - uses: oven-sh/setup-bun@v2
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - run: bun install --frozen-lockfile
+      - run: bun run test
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v__VERSION__
+          releaseName: symbolhu v__VERSION__
+          releaseBody: See the README for install notes (the app is not notarized yet).
+          releaseDraft: true
+          prerelease: false
+          args: --target aarch64-apple-darwin --bundles dmg
