@@ -103,13 +103,27 @@ Output lands in `src-tauri/target/release/bundle/`.
 
 ### Releasing
 
-Versions follow [SemVer](https://semver.org/). `package.json`, `src-tauri/tauri.conf.json` and `src-tauri/Cargo.toml` must carry the same version.
+Versions follow [SemVer](https://semver.org/). `package.json`, `src-tauri/tauri.conf.json`, `src-tauri/Cargo.toml` and `src-tauri/Cargo.lock` must carry the same version. `scripts/bump.sh` updates all four (it uses macOS `sed`).
+
+Steps for a new release (example: `0.3.0`):
 
 ```bash
-# 1. bump the version in the three files above, run tests, merge to main
-# 2. tag and push
-git tag v0.2.0 && git push origin v0.2.0
+# 1. branch from an up-to-date main and bump the version everywhere
+git checkout main && git pull
+git checkout -b chore/release-0.3.0
+scripts/bump.sh 0.3.0
+bun run test && bun run build        # sanity check
+
+# 2. commit, push, open a PR and merge it into main
+git commit -am "Bump version to 0.3.0"
+git push -u origin HEAD
+
+# 3. tag the merge commit on main and push the tag (this starts the release)
+git checkout main && git pull
+git tag v0.3.0 && git push origin v0.3.0
 ```
+
+Tag only **after** the bump PR is merged: the workflow fails with `tag vX.Y.Z != vA.B.C` if the tag does not match the versions in the files. If that happens, delete the tag (`git tag -d vX.Y.Z && git push origin :refs/tags/vX.Y.Z`), merge the fix and tag again.
 
 The [Release workflow](.github/workflows/release.yml) builds the Apple Silicon `.dmg` and attaches it to a **draft** GitHub release. Edit the notes, then click **Publish**. Use `0.x.y-rc.1` style tags/versions with the "pre-release" checkbox for test builds. The workflow can also be started manually from the Actions tab as a dry run.
 
@@ -130,7 +144,7 @@ swiftc -O scripts/gen-layout.swift -o /tmp/gen-layout && /tmp/gen-layout > src/d
     -   `data/layout-hu-mac.json`: character to physical key and modifiers (generated).
     -   `layout.ts`, `store.ts`: layout lookup and persistence.
 -   `src-tauri/`: Rust shell, capabilities and Tauri config.
--   `scripts/`: layout generator (`gen-layout.swift`).
+-   `scripts/`: layout generator (`gen-layout.swift`) and version bump (`bump.sh`).
 -   `.github/workflows/`: release pipeline.
 -   `docs/superpowers/`: design spec and implementation plan.
 -   `screenshots/`: images used in this README.
