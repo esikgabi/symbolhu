@@ -1,6 +1,6 @@
 [package]
 name = "symbolhu"
-version = "0.1.0"
+version = "0.2.0"
 description = "Hungarian Mac keyboard symbol trainer"
 authors = []
 edition = "2021"
