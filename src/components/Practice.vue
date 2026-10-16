@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, reactive, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from "vue";
 import { GameSession } from "../engine/session";
 import { pickGameChars, recordResults, type GameRecord, type StatsMap } from "../engine/rules";
 import type { Settings } from "../engine/settings";
@@ -16,6 +16,7 @@ const hintChar = ref("");
 const label = ref("");
 const barKey = ref(0);
 const wrongLayout = ref(false);
+const pill = computed(() => (s.mastered.length === chars.length ? "ok" : s.mastered.length ? "part" : "none"));
 let timer: number | undefined;
 
 function startAsk() {
@@ -85,7 +86,10 @@ onBeforeUnmount(() => {
 
     <template v-if="phase !== 'over'">
       <div class="meta">{{ phase === "hint" ? label : `Round ${s.round}/${settings.maxRounds} · ask ${s.asks.length + 1}/${s.queue.length}` }}</div>
-      <div class="char">{{ phase === "hint" ? hintChar : s.current }}</div>
+      <svg class="char" viewBox="0 0 100 100" role="img" :aria-label="phase === 'hint' ? hintChar : s.current">
+        <rect x="2" y="2" width="96" height="96" rx="14" />
+        <text x="50" y="68" text-anchor="middle">{{ phase === "hint" ? hintChar : s.current }}</text>
+      </svg>
       <div v-if="phase === 'ask'" class="bar"><div :key="barKey" class="fill" :style="{ animationDuration: settings.timeoutSec + 's' }" /></div>
       <template v-else>
         <KeyboardHint :char="hintChar" />
@@ -93,15 +97,20 @@ onBeforeUnmount(() => {
       </template>
     </template>
 
-    <template v-else>
-      <h2>Game finished</h2>
-      <ul>
-        <li v-for="(r, i) in s.rounds" :key="i">
-          Round {{ i + 1 }}: asked {{ r.asked.join(" ") }} → mastered {{ r.mastered.join(" ") || "none" }}
-        </li>
-      </ul>
-      <p v-if="s.active.length">Still weak: {{ s.active.join(" ") }}</p>
-    </template>
+    <div v-else class="done">
+      <h2>Game finished <span class="pill" :class="pill">{{ s.mastered.length }}/{{ chars.length }} mastered</span></h2>
+      <table class="tbl">
+        <thead><tr><th>Round</th><th>Asked</th><th class="n">Mastered</th></tr></thead>
+        <tbody>
+          <tr v-for="(r, i) in s.rounds" :key="i">
+            <td>{{ i + 1 }}</td>
+            <td><span v-for="c in r.asked" :key="c" class="key" :class="r.mastered.includes(c) ? 'ok' : 'no'">{{ c }}</span></td>
+            <td class="n">{{ r.mastered.length }}/{{ r.asked.length }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p v-if="s.active.length" class="muted">Still weak: <span v-for="c in s.active" :key="c" class="key no">{{ c }}</span></p>
+    </div>
 
     <button @click="phase === 'over' ? emit('quit') : quit()">{{ phase === "over" ? "Back" : "Quit game" }}</button>
   </section>
@@ -109,11 +118,15 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .practice { text-align: center; }
-.char { font-size: 9rem; line-height: 1.2; font-weight: 700; }
+.char { display: block; width: 110px; margin: 0.5rem auto; }
+.char rect { fill: #2c2c30; stroke: #555; stroke-width: 2; }
+.char text { fill: #eee; font: 700 64px ui-monospace, "SF Mono", Menlo, monospace; }
 .meta, .muted { color: #999; }
 .warn { background: #5a3b00; padding: 0.6rem; border-radius: 6px; }
 .bar { height: 8px; background: #333; border-radius: 4px; overflow: hidden; margin: 1rem auto 2rem; max-width: 400px; }
 .fill { height: 100%; background: #f5a623; transform-origin: left; animation: shrink linear forwards; }
 @keyframes shrink { from { transform: scaleX(1); } to { transform: scaleX(0); } }
-ul { list-style: none; padding: 0; }
+.done { max-width: 34rem; margin: 0 auto; text-align: left; }
+.done h2 { text-align: center; }
+.done .pill { margin-left: 0.5rem; vertical-align: middle; }
 </style>

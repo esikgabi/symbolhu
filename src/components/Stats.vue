@@ -11,34 +11,48 @@ const rows = computed(() =>
     .sort((a, b) => b.miss - a.miss),
 );
 const games = computed(() => [...props.games].reverse());
+const fmt = (d: string) => new Date(d).toLocaleString([], { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+const mastered = (g: GameRecord) => g.rounds.reduce((n, r) => n + r.mastered.length, 0);
+const pillClass = (g: GameRecord) => (mastered(g) === g.chars.length ? "ok" : mastered(g) ? "part" : "none");
 </script>
 
 <template>
   <section class="stats">
     <h2>Statistics</h2>
     <p v-if="!rows.length">No games played yet.</p>
-    <table v-else>
-      <thead><tr><th>Char</th><th>Asks</th><th>Hits</th><th>Recent miss %</th><th>Times mastered</th></tr></thead>
+    <table v-else class="tbl">
+      <thead><tr><th>Char</th><th class="n">Asks</th><th class="n">Hits</th><th>Miss</th><th class="n">Mastered</th></tr></thead>
       <tbody>
         <tr v-for="r in rows" :key="r.c">
-          <td class="c">{{ r.c }}</td><td>{{ r.asks }}</td><td>{{ r.hits }}</td><td>{{ r.miss }}</td><td>{{ r.masteredCount }}</td>
+          <td><span class="key">{{ r.c }}</span></td>
+          <td class="n">{{ r.asks }}</td>
+          <td class="n">{{ r.hits }}</td>
+          <td><span class="bar"><i :style="{ width: r.miss + '%' }" /></span>{{ r.miss }}%</td>
+          <td class="n">{{ r.masteredCount }}</td>
         </tr>
       </tbody>
     </table>
-    <h3>Games</h3>
-    <ul>
-      <li v-for="g in games" :key="g.date">
-        {{ new Date(g.date).toLocaleString() }} · {{ g.chars.join(" ") }} · {{ g.rounds.length }} rounds ·
-        mastered {{ g.rounds.reduce((n, r) => n + r.mastered.length, 0) }}/{{ g.chars.length }}
-      </li>
-    </ul>
+    <template v-if="games.length">
+      <h3>Games</h3>
+      <table class="tbl">
+        <thead><tr><th>Date</th><th>Chars</th><th class="n">Rounds</th><th class="n">Mastered</th></tr></thead>
+        <tbody>
+          <tr v-for="g in games" :key="g.date">
+            <td class="date">{{ fmt(g.date) }}</td>
+            <td><span v-for="c in g.chars" :key="c" class="key">{{ c }}</span></td>
+            <td class="n">{{ g.rounds.length }}</td>
+            <td class="n"><span class="pill" :class="pillClass(g)">{{ mastered(g) }}/{{ g.chars.length }}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </template>
     <button @click="$emit('back')">Back</button>
   </section>
 </template>
 
 <style scoped>
-table { border-collapse: collapse; margin: 0 auto 1rem; }
-th, td { padding: 0.3rem 0.9rem; text-align: center; border-bottom: 1px solid #444; }
-.c { font-size: 1.4rem; font-weight: 700; }
-ul { list-style: none; padding: 0; }
+.stats { max-width: 34rem; margin: 0 auto; }
+.date { white-space: nowrap; }
+.bar { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: #3a3a3e; vertical-align: middle; margin-right: 0.4rem; overflow: hidden; }
+.bar i { display: block; height: 100%; background: #f5a623; }
 </style>

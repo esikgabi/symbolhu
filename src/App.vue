@@ -54,5 +54,16 @@ main { padding: 1.5rem; min-height: 100vh; box-sizing: border-box; }
 button { font: inherit; padding: 0.5rem 1.1rem; border-radius: 8px; border: 1px solid #666; background: #333; color: #eee; cursor: pointer; }
 button.primary { background: #f5a623; color: #000; border-color: #f5a623; font-weight: 700; }
 input, textarea { font: inherit; padding: 0.4rem; border-radius: 6px; border: 1px solid #666; background: #2a2a2e; color: #eee; }
+.tbl { border-collapse: collapse; width: 100%; margin-bottom: 1rem; font-size: 0.9rem; }
+.tbl th { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: #999; font-weight: 600; text-align: left; padding: 0.3rem 0.5rem; }
+.tbl td { padding: 0.4rem 0.5rem; border-top: 1px solid #333; }
+.tbl .n { text-align: right; font-variant-numeric: tabular-nums; }
+.key { display: inline-block; min-width: 1.5rem; text-align: center; padding: 0.1rem 0.35rem; margin: 1px; border-radius: 6px; background: #333; border: 1px solid #555; border-bottom-width: 3px; font: 700 1rem ui-monospace, monospace; }
+.key.ok { border-color: #3ba55d; color: #7ee2a0; }
+.key.no { border-color: #c0504d; color: #ff8f8c; }
+.pill { padding: 0.1rem 0.5rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; }
+.pill.ok { background: #1f3a29; color: #7ee2a0; }
+.pill.part { background: #4a3a14; color: #f5c453; }
+.pill.none { background: #4a2121; color: #ff8f8c; }
 .menu { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; margin-top: 12vh; }
 </style>
