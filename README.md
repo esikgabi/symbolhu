@@ -8,12 +8,12 @@ A small desktop trainer built with **Tauri 2** and **Vue 3** for the symbols tha
 
 Download the latest `.dmg` from the [releases page](https://github.com/esikgabi/symbolhu/releases) (macOS, Apple Silicon only), open it and drag **symbolhu** to Applications. You can also build it from source (see [Building](#building)).
 
-The app is not notarized by Apple (no paid developer account), so macOS blocks the first launch:
+The app is not notarized by Apple (no paid developer account), so macOS blocks the launch of every freshly downloaded version (including updates):
 
 -   Try to open the app once, then go to **System Settings → Privacy & Security**, scroll down and click **Open Anyway**; or
 -   run `xattr -dr com.apple.quarantine /Applications/symbolhu.app` in Terminal.
 
-Only needed once. Releases are built by GitHub Actions from the tagged source, so the file you download matches the code in this repo.
+Repeat this after each new download. Releases are built by GitHub Actions from the tagged source, so the file you download matches the code in this repo.
 
 ## Features
 
