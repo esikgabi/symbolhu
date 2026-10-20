@@ -1,8 +1,25 @@
 # symbolhu
 
-A small desktop trainer built with **Tauri 2** and **Vue 3** for the symbols that are hard to find on a Hungarian Mac keyboard: `< > * ( )` and more. It drills you on the characters you miss most, and shows exactly which keys to press when you get one wrong.
+A small desktop trainer built with **Tauri 2** and **Vue 3** for the symbols that are hard to find on a Hungarian Mac keyboard: `< > * ( ) [ ] { } \ | @ # & ~ ^ $` and more. It drills you on the characters you miss most, and shows exactly which keys to press when you get one wrong.
 
 ![Practice screen with keyboard hint](screenshots/hint.png)
+
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Features](#features)
+-   [Gallery](#gallery)
+-   [Settings](#settings)
+-   [Tech Stack](#tech-stack)
+-   [Development](#development)
+    -   [Prerequisites](#prerequisites)
+    -   [Setup](#setup)
+    -   [Commands](#commands)
+    -   [Building](#building)
+    -   [Releasing](#releasing)
+    -   [Regenerating the layout map](#regenerating-the-layout-map)
+-   [Project Structure](#project-structure)
+-   [License](#license)
 
 ## Installation
 
